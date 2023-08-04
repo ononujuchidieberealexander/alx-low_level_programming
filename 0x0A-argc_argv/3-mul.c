@@ -8,17 +8,21 @@
  * @argv: argument vector
  * Return: 0 if true, i if false
  */
-int main(int argc, char *argv[])
-{
-	int a, b;
-
-	if (argc == 3)
+int main(int argc, char **argv)
 	{
-		a = atoi(argv[1]);
-		b = atoi(argv[1]);
-		printf("%d\n", a * b);
-		return (0);
+
+	 int total;
+
+	if (argc < 2)
+	{
+		printf("Error\n");
+		return (1);
 	}
-	printf("Error\n");
-	return (1);
-}
+
+	total = (int) *argv[1] * (int) *argv[2];
+
+	printf("%d\n", total);
+
+	return (0);
+
+	}
